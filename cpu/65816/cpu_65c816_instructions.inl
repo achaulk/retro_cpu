@@ -306,7 +306,7 @@ struct AddrAbsY : public AddrAbsBase<RY, AddrAbsX<AType, XYType>>
 	static constexpr const char kFormat[] = "%X";
 
 	static constexpr uint8_t op_bits = 0xC;
-
+	template<uint32_t reg>
 	struct EffAddr {
 		static constexpr JitOperation ops[] = {
 			{JitOperation::kReadImm, JitOperation::kTempReg | reg, JitOperation::Bytes(2)},
