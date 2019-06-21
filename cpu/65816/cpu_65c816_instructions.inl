@@ -2704,7 +2704,7 @@ struct MVN
 			uint8_t bytes[2];
 		};
 		cpu->ReadPBR(cpu->cpu_state.ip + 1, arg);
-		if(cpu->BlockMove(bytes[1], bytes[0], 1))
+		if(cpu->BlockMove(bytes[0], bytes[1], 1))
 			cpu->cpu_state.ip += kBytes;
 	}
 
@@ -2732,7 +2732,7 @@ struct MVP
 			uint8_t bytes[2];
 		};
 		cpu->ReadPBR(cpu->cpu_state.ip + 1, arg);
-		if(cpu->BlockMove(bytes[1], bytes[0], 0xFFFF))
+		if(cpu->BlockMove(bytes[0], bytes[1], 0xFFFF))
 			cpu->cpu_state.ip += kBytes;
 	}
 
